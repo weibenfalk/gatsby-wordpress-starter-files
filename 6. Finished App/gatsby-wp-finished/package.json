@@ -1,0 +1,50 @@
+{
+  "name": "cakeit-wp",
+  "private": true,
+  "description": "A super cool Gatsy-WP site!",
+  "version": "0.1.0",
+  "author": "@weibenfalk",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.12.0",
+    "gatsby": "^2.29.3",
+    "gatsby-image": "^2.8.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-image": "^0.4.1",
+    "gatsby-plugin-manifest": "^2.9.1",
+    "gatsby-plugin-offline": "^3.7.1",
+    "gatsby-plugin-react-helmet": "^3.7.0",
+    "gatsby-plugin-sharp": "^2.11.2",
+    "gatsby-plugin-styled-components": "^3.7.0",
+    "gatsby-source-filesystem": "^2.8.1",
+    "gatsby-source-wordpress-experimental": "^6.0.0",
+    "gatsby-transformer-sharp": "^2.9.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "prettier": "2.1.2"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

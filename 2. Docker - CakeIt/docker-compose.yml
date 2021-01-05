@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: gatsby
+      WORDPRESS_DB_PASSWORD: gatsby
+      WORDPRESS_DB_NAME: cakeitdb
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+
+  db:
+    image: mysql:latest
+    command: '--default-authentication-plugin=mysql_native_password'
+    restart: always
+    environment:
+      MYSQL_DATABASE: cakeitdb
+      MYSQL_USER: gatsby
+      MYSQL_PASSWORD: gatsby
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d

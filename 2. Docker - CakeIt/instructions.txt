@@ -1,0 +1,26 @@
+
+Download link for docker Compose:
+
+https://docs.docker.com/compose/install/
+
+Login to Wordpress admin:
+
+login: gatsby
+pass: gatsby
+
+
+The port in the DB is set to port 8080. Have to change that if using another port in the docker compose yml file.
+
+Docker instructions:
+
+Start container: 
+docker-compose up -d
+
+Stop all containers: 
+docker stop $(docker ps -a -q)
+
+Remove all containers:
+docker rm $(docker ps -a -q)
+
+Remove all images:
+docker rmi $(docker images -a -q)
