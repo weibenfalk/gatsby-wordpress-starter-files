@@ -22,13 +22,13 @@ const PostContent = styled.article`
   margin-top: 20px;
 `
 
-const PostTemplate = ({ data }) => (
+const PostTemplate = () => (
   <Layout>
     <Wrapper>
       <BreadCrumb
         parent={{
-          link: '/blog/all-posts',
-          title: 'blog'
+          uri: "/blog/all-posts",
+          title: "blog",
         }}
       />
       <ContentWrapper>

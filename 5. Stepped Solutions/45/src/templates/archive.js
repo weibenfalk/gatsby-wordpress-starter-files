@@ -17,7 +17,7 @@ import {
 
 const archiveTemplate = ({
   data: { allWpPost },
-  pageContext: { catId, catName, catSlug, categories, numPage, currentPage },
+  pageContext: { catId, catName, catUri, categories, numPages, currentPage },
 }) => (
   <Layout>
     <StaticImage
@@ -31,7 +31,7 @@ const archiveTemplate = ({
     <Wrapper>
       <BreadCrumb
         parent={{
-          link: "/blog/all-posts/",
+          uri: "/blog/all-posts",
           title: "blog",
         }}
       />
@@ -41,7 +41,7 @@ const archiveTemplate = ({
           <h1 dangerouslySetInnerHTML={{ __html: catName }} />
           {allWpPost.edges.map(post => (
             <article key={post.node.id} className="entry-content">
-              <Link to={`/blog/${post.node.slug}/`}>
+              <Link to={`/blog${post.node.uri}`}>
                 <StyledH2
                   dangerouslySetInnerHTML={{ __html: post.node.title }}
                 />
@@ -50,7 +50,7 @@ const archiveTemplate = ({
                 dangerouslySetInnerHTML={{ __html: post.node.date }}
               />
               <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
-              <StyledReadMore to={`/blog/${post.node.slug}/`}>
+              <StyledReadMore to={`/blog${post.node.uri}`}>
                 Read More
               </StyledReadMore>
               <div className="dot-divider" />
@@ -76,6 +76,7 @@ export const pageQuery = graphql`
           id
           title
           excerpt
+          uri
           slug
           date(formatString: "DD MM YYYY")
         }

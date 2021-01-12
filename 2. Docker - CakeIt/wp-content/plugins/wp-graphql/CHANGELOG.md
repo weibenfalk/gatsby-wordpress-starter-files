@@ -1,5 +1,47 @@
 # Changelog
 
+## 1.1.1
+
+## Bugfix
+
+- ([#1670](https://github.com/wp-graphql/wp-graphql/issues/1670)) Fixes a bug with querying pages that are set as to be the posts page
+
+## 1.1.0
+
+This release centers around updating code quality by implementing [PHPStan](https://phpstan.org/) checks. PHPStan is a tool that statically analyzes PHP codebases to detect bugs. This release centers around updating Docblocks and overall code quality, and implements automated tests to check code quality on every pull request.
+
+## New
+
+- Update PHPStan (Code Quality checker) to v0.12.64
+- Increases PHPStan code quality checks to Level 8 (highest level).
+
+## Bugfixes
+- ([#1653](https://github.com/wp-graphql/wp-graphql/issues/1653)) Fixes bug where WPGraphQL was explicitly setting `has_published_posts` on WP_Query but WP_Query does this under the hood already. Thanks @jmartinhoj!
+- Fixes issue with Comment Model returning comments that are not associated with a Post object. Comments with no associated Post object are not public entities.
+- Update docblocks to be compatible with PHPStan Level 8. 
+- Removed some uncalled code
+- Added early returns in some places to prevent unnecessary added execution
+
+## 1.0.5
+
+### New
+
+- Updates GraphQL-PHP from v14.3.0 to v14.4.0
+- Updates GraphQL-Relay-PHP from v0.3.1 to v0.5.0
+
+### Bugfixes
+
+- Fixes a bug where CI Tests were not passing when code coverage is enabled
+- ([#1633](https://github.com/wp-graphql/wp-graphql/pull/1633)) Fixes bug where Introspection Queries were showing fields with no deprecationReason as deprecated because it was outputting an empty string instead of a null value.
+- ([#1627](https://github.com/wp-graphql/wp-graphql/pull/1627)) Fixes bug where fields on the Model called multiple times might weren't being set properly
+- Updates Theme tests to be more resilient for WP Core updates where new themes are introduced
+
+## 1.0.4
+
+### Bugfixes
+
+- Fixes a regression to previews introduced by v1.0.3 
+
 ## 1.0.3
 
 ### Bugfixes

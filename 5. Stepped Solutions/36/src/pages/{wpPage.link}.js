@@ -1,15 +1,15 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import styled from 'styled-components';
+import React from "react"
+import { graphql } from "gatsby"
+import styled from "styled-components"
 // Components
-import Layout from '../components/Layout/Layout';
-import PageHero from '../components/PageHero/PageHero';
+import Layout from "../components/Layout/Layout"
+import PageHero from "../components/PageHero/PageHero"
 
 const Wrapper = styled.div`
   max-width: 1180px;
   margin: 0 auto;
   padding: 20px;
-`;
+`
 
 const ContentWrapper = styled.div`
   display: block;
@@ -17,11 +17,11 @@ const ContentWrapper = styled.div`
   @media (min-width: 992px) {
     display: flex;
   }
-`;
+`
 
 const PageContent = styled.article`
   margin-top: 20px;
-`;
+`
 
 const PageTemplate = ({ data }) => (
   <Layout>
@@ -38,9 +38,9 @@ const PageTemplate = ({ data }) => (
       <p>Content</p>
     </Wrapper>
   </Layout>
-);
+)
 
-export default PageTemplate;
+export default PageTemplate
 
 export const pageQuery = graphql`
   query($id: String!) {
@@ -54,9 +54,11 @@ export const pageQuery = graphql`
           id
           localFile {
             childImageSharp {
-              fluid(quality: 100, maxWidth: 1920) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              gatsbyImageData(
+                maxWidth: 1920
+                layout: FLUID
+                placeholder: TRACED_SVG
+              )
             }
           }
         }
@@ -65,7 +67,7 @@ export const pageQuery = graphql`
         nodes {
           ... on WpPage {
             id
-            link
+            uri
             title
           }
         }
@@ -74,14 +76,14 @@ export const pageQuery = graphql`
         node {
           ... on WpPage {
             id
-            link
+            uri
             title
             wpChildren {
               nodes {
                 ... on WpPage {
                   id
                   title
-                  link
+                  uri
                 }
               }
             }
@@ -90,4 +92,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

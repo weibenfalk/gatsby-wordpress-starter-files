@@ -1,19 +1,19 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby';
 
 export const useLatestBlogPost = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query LatestBlogPostQuery {
       allWpPost(sort: { fields: date, order: DESC }) {
         edges {
           node {
             title
             excerpt
-            slug
+            uri
           }
         }
       }
     }
-  `)
+  `);
 
-  return data
-}
+  return data;
+};

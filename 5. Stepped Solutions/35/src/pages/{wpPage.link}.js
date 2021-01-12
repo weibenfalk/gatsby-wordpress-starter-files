@@ -41,8 +41,10 @@ export const pageQuery = graphql`
       id
       title
       content
+      status
       featuredImage {
         node {
+          id
           localFile {
             childImageSharp {
               gatsbyImageData(
@@ -58,7 +60,7 @@ export const pageQuery = graphql`
         nodes {
           ... on WpPage {
             id
-            link
+            uri
             title
           }
         }
@@ -67,14 +69,14 @@ export const pageQuery = graphql`
         node {
           ... on WpPage {
             id
-            link
+            uri
             title
             wpChildren {
               nodes {
                 ... on WpPage {
                   id
                   title
-                  link
+                  uri
                 }
               }
             }

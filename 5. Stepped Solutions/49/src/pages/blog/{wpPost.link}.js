@@ -28,7 +28,7 @@ const PostTemplate = ({ data }) => (
     <Wrapper>
       <BreadCrumb
         parent={{
-          link: "/blog/all-posts",
+          uri: "/blog/all-posts",
           title: "blog",
         }}
       />
@@ -60,6 +60,7 @@ export const pageQuery = graphql`
         nodes {
           id
           name
+          uri
           slug
         }
       }

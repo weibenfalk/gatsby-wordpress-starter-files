@@ -1,7 +1,7 @@
 import React from 'react';
 import { Wrapper } from './SidebarMessage.styles';
 
-import tangoMail from '../../images/tango-mail-icon.svg';
+import tangoMail from '../../images/mail-icon.svg';
 
 const SidebarMessage = () => (
   <Wrapper>

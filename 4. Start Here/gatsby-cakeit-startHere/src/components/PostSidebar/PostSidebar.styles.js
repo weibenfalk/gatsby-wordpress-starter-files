@@ -14,7 +14,7 @@ export const Menu = styled.ul`
   padding: 0 20px 0 0;
   margin: 0;
 
-  .sidebar-menu-header {
+  .sidebar-section {
     font-family: 'Teko', Arial, Helvetica, sans-serif;
     border-bottom: 2px #e4e4e4 solid;
     font-weight: 400;

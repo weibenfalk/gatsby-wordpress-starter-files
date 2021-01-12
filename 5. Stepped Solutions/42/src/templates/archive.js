@@ -35,6 +35,7 @@ export const pageQuery = graphql`
           id
           title
           excerpt
+          uri
           slug
           date(formatString: "DD MM YYYY")
         }

@@ -27,7 +27,7 @@ const archiveTemplate = ({ data: { allWpPost } }) => (
     <Wrapper>
       <BreadCrumb
         parent={{
-          link: "/blog/all-posts/",
+          uri: "/blog/all-posts",
           title: "blog",
         }}
       />
@@ -49,6 +49,7 @@ export const pageQuery = graphql`
           id
           title
           excerpt
+          uri
           slug
           date(formatString: "DD MM YYYY")
         }

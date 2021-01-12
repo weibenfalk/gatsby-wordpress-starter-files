@@ -1,17 +1,23 @@
 const path = require("path")
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   const result = await graphql(`
     {
+      wp {
+        readingSettings {
+          postsPerPage
+        }
+      }
       allWpCategory {
         edges {
           node {
             id
             name
-            slug
             count
+            uri
+            slug
           }
         }
       }
@@ -19,7 +25,11 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   // Check for errors
-  if (result.errors) throw new Error(result.error)
+  if (result.errors) {
+    reporter.panicOnBuild(`Something went horrible wrong!`, result.errors)
+    return
+  }
 
-  const { allWpCategory } = result.data
+  const { wp, allWpCategory } = result.data
+  console.log(wp)
 }
