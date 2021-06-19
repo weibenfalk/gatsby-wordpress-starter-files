@@ -11,8 +11,7 @@ export const useHeroQuery = () => {
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  maxWidth: 1920
-                  layout: FLUID
+                  width: 1920
                   placeholder: TRACED_SVG
                 )
               }

@@ -1,5 +1,39 @@
 # Change Log
 
+## 1.0.6
+
+- Bump stable version tag
+
+## 1.0.5
+
+- Fixed our build/publish process which was failing due to using the develop branch of WPGraphQL in tests.
+
+## 1.0.4
+
+- In some cases the homepage was not previewable in Gatsby Preview - this is now fixed.
+
+## 1.0.3
+
+- Fixed `wp_save_image_file` and `wp_save_image_editor_file` callback argument count.
+
+## 1.0.2
+
+- An erroneous change in our composer autoload broke our first stable release 😅 bit of a rocky start but lets try this again 🤝 😁 You can bet we'll be adding a test for this 😂
+
+## 1.0.1
+
+- Fixed a broken link in the readme.
+
+## 1.0.0
+
+This plugin has come a long way over the past few months! This release introduces no changes outside of a few pages of docs. We're choosing this point to call this plugin stable as the plugin is well tested via our test suites and members of the community using it in the wild. Thanks everyone for your help and support in getting this plugin to this point!
+
+## 0.9.2
+
+### Bug Fixes
+
+- The preview template loader was fixed for cases where the global $post is not set, which previously lead to PHP errors.
+
 ## 0.9.1
 
 - Removed a new internal taxonomy from the GraphQL schema which was unintentionally added in the last release.
@@ -21,7 +55,7 @@ This is a breaking change release as a lot of internals for the Action Monitor c
 
 ### Fixes and improvements
 
-- TESTS! Lots of tests for the Action Monitors. 
+- TESTS! Lots of tests for the Action Monitors.
 - JWT Secret is now set once when WPGatsby is first loaded, instead of every time the settings page is visited.
 
 ### Issues closed by this release
@@ -49,6 +83,7 @@ This is a breaking change release as a lot of internals for the Action Monitor c
 ## 0.7.1
 
 - The last version added some internal taxonomies to the GraphQL schema unintentionally. This release removes them.
+
 ## 0.7.0
 
 ### Breaking Changes

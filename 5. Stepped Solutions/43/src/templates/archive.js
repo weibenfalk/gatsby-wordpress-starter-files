@@ -19,9 +19,8 @@ const archiveTemplate = ({ data: { allWpPost } }) => (
     <StaticImage
       src="../images/archive_headerimage.png"
       placeholder="TRACED_SVG"
-      layout="fluid"
-      maxWidth={1920}
-      maxHeight={300}
+      width={1920}
+      height={300}
       alt="Archive Hero"
     />
     <Wrapper>

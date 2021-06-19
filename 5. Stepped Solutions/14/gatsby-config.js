@@ -29,7 +29,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-wordpress-experimental`,
+      resolve: `gatsby-source-wordpress`,
       options: {
         url: `http://cakeit.local/graphql`,
       },
